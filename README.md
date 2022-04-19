@@ -1,5 +1,5 @@
 # chatbot
-This Project is chatbot to study the cloud computing.
+This project is about a chatbot on Telegram to study the cloud computing.
 
 ## First, create a file `config.ini` under the root directory
 ```
