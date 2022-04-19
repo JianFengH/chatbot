@@ -1,7 +1,7 @@
-# chatbot
+# Chatbot
 This project is about a chatbot on Telegram to study the cloud computing.
 
-## First, create a file `config.ini` under the root directory
+## Create a file `config.ini` under the root directory
 ```
 [postgresql]
 host=
@@ -13,7 +13,7 @@ password=
 access_token=
 ``` 
 
-## how to run
+## How to run
 ```
 pip install -r requirements.txt
 
