@@ -34,7 +34,3 @@ jobs:
         id: docker_build
         run: |
           ./docker-ci.sh
-      
-      - name: Image digest
-        run: |
-          echo ${{ steps.docker_build.outputs.digest }}
