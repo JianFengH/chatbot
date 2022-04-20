@@ -8,6 +8,7 @@ COPY requirements.txt .
 COPY WilsonTrail.py .
 COPY LantauTrail.py .
 COPY MaclehoseTrail.py .
+COPY CookingVideo.py .
 
 RUN pip install pip update
 RUN pip install -r requirements.txt

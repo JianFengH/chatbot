@@ -8,10 +8,10 @@ Photo = None
 def checkroute2(routenum):
     """ Connect to the PostgreSQL database server """
     
-    #Define global variable "route"
+    #Define global variable "route" and "Photo"
     global route
     global Photo
-    #get the last number from command "/MACLEHOSE"
+    #get the last number from command "/LANTAU"
     num = routenum[-1]
     
     conn = None
