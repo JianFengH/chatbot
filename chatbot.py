@@ -9,7 +9,7 @@ import configparser
 import os
 
 # Use the function from MaclehoseTrail
-from MaclehoseTrail import checkroute
+from MaclehoseTrail import Photo, checkroute
 from LantauTrail import checkroute2
 from WilsonTrail import checkroute3
 
@@ -60,34 +60,29 @@ def main():
     updater.idle()
 
     # ////MACLEHOSE TRAIL
-
-
 def Trail1(update: Update, context: CallbackContext) -> None:
     logging.info(str(update.message.text))
-    result = checkroute(update.message.text)
-    Result = result[0]
-    update.message.reply_text('Here is the route:')
-    context.bot.send_message(chat_id=update.effective_chat.id, text=Result)
+    result,Photo = checkroute(update.message.text)
+    update.message.reply_text('Here is the route and landscape photo:')
+    context.bot.send_message(chat_id=update.effective_chat.id, text=result)
+    context.bot.send_photo(chat_id=update.effective_chat.id,photo=Photo)
 
     # ////LANTAU TRAIL
-
-
 def Trail2(update: Update, context: CallbackContext) -> None:
     logging.info(str(update.message.text))
-    result = checkroute2(update.message.text)
-    Result = result[0]
-    update.message.reply_text('Here is the route:')
-    context.bot.send_message(chat_id=update.effective_chat.id, text=Result)
+    result,Photo = checkroute2(update.message.text)
+    update.message.reply_text('Here is the route and landscape photo:')
+    context.bot.send_message(chat_id=update.effective_chat.id, text=result)
+    context.bot.send_photo(chat_id=update.effective_chat.id,photo=Photo)
+    
 
     # /////WILSON TRAIL
-
-
 def Trail3(update: Update, context: CallbackContext) -> None:
     logging.info(str(update.message.text))
-    result = checkroute3(update.message.text)
-    Result = result[0]
-    update.message.reply_text('Here is the route:')
-    context.bot.send_message(chat_id=update.effective_chat.id, text=Result)
+    result,Photo = checkroute3(update.message.text)
+    update.message.reply_text('Here is the route and landscape photo:')
+    context.bot.send_message(chat_id=update.effective_chat.id, text=result)
+    context.bot.send_photo(chat_id=update.effective_chat.id,photo=Photo)
 
 #startMenu
 def Startmenu(update: Update, context: CallbackContext) -> None:
@@ -109,10 +104,10 @@ def Checkmenu(update: Update, context: CallbackContext) -> None:
     " /MACLEHOSE1 \n\n /MACLEHOSE2 \n\n /MACLEHOSE3 \n\n /MACLEHOSE4 \n\n /MACLEHOSE5")
 
     text2 = ("Here are the five routes for Lantau Trail.You can click on them directly to get the route.\n\n"
-    "/LANTAU1 \n\n /LANTAU2 \n\n /LANTAU3 \n\n /LANTAU4 \n\n /LANTAU5")
+    " /LANTAU1 \n\n /LANTAU2 \n\n /LANTAU3 \n\n /LANTAU4 \n\n /LANTAU5")
 
-    text3 = "Here are the five routes for Wilson Trail.You can click on them directly to get the route.\n\n"
-    "/WILSON1 \n\n /WILSON2 \n\n /LANTAU3 \n\n /LANTAU4 \n\n /LANTAU5"
+    text3 = ("Here are the five routes for Wilson Trail.You can click on them directly to get the route.\n\n"
+    " /WILSON1 \n\n /WILSON2 \n\n /WILSON3 \n\n /WILSON4 \n\n /WILSON5")
 
     if querydata.data == "1":
         update.callback_query.edit_message_text(text =text1 )
@@ -120,7 +115,7 @@ def Checkmenu(update: Update, context: CallbackContext) -> None:
         update.callback_query.edit_message_text(text =text2 )
     elif querydata.data == "3":
          update.callback_query.edit_message_text(text =text3 )
-         
+
 
 if __name__ == '__main__':
     main()

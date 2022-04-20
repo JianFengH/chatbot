@@ -5,12 +5,13 @@ from config import config
 
 #Define variable "route"
 route = None
-
+Photo = None
 def checkroute(routenum):
     """ Connect to the PostgreSQL database server """
     
     #Define global variable "route"
     global route
+    global Photo
     #get the last number from command "/MACLEHOSE"
     num = routenum[-1]
     
@@ -24,9 +25,11 @@ def checkroute(routenum):
 		
         # create a cursor and execute the query
         cur = conn.cursor()
-        cur.execute('select route from maclehose where rid ='+ num)
+        cur.execute('select route,url from maclehose where rid ='+ num)
         conn.commit()
         route = cur.fetchall()
+        Route = route[0][0]
+        Photo = route[0][1]
         cur.close()
 
     except (Exception, psycopg2.DatabaseError) as error:
@@ -35,7 +38,7 @@ def checkroute(routenum):
         if conn is not None:
             conn.close()
 
-    return route
+    return Route, Photo
 
 if __name__ == '__main__':
     checkroute()
