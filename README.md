@@ -22,14 +22,14 @@ access_token=
 
 ## How to run
 
-### Run python
+### Run python directly
 ```
 pip install -r requirements.txt
 
 python chatbot.py
 ```
 
-### Run docker
+### Run docker command to test chatbot image before pushing code
 ```
 docker build -t chatbot:test .
 
@@ -41,7 +41,8 @@ docker run -it --rm -v "$(pwd)/config.ini:/app/config.ini"  --name test_chatbot 
 ./docker-test.sh
 ```
 
-### Run docker by using the remote image
+### Run docker by using the remote chatbot image
+You can view the remote chatbot image from [dockerjeffery/chatbot](https://hub.docker.com/repository/docker/dockerjeffery/chatbot).
 ```
 docker run -it --rm -v "$(pwd)/config.ini:/app/config.ini"  --name test_chatbot dockerjeffery/chatbot
 ```
