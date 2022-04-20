@@ -1,5 +1,12 @@
 # Chatbot
-This project is about a chatbot on Telegram to study the cloud computing.
+This project is about a chatbot on Telegram to study the cloud computing. You can refer to the project of [chatbot-deploy](https://github.com/JianFengH/chatbot-deploy.git) which is conveinent for the environment of development and deployment.
+
+## Members of group 22 
+| Name | Github ID |
+| - | - |
+| Hao Jianfeng | JianFengH |
+| Liu Wei | thydoge |
+| Cao Xiaoyun| midori-owo |
 
 ## Create a file `config.ini` under the root directory
 ```
