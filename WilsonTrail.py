@@ -1,12 +1,11 @@
 from asyncio import run_coroutine_threadsafe
 import psycopg2
-
 from config import config
 
 #Define variable "route"
 route = None
 
-def checkroute(routenum):
+def checkroute3(routenum):
     """ Connect to the PostgreSQL database server """
     
     #Define global variable "route"
@@ -24,7 +23,7 @@ def checkroute(routenum):
 		
         # create a cursor and execute the query
         cur = conn.cursor()
-        cur.execute('select route from maclehose where rid ='+ num)
+        cur.execute('select route from wilson where rid ='+ num)
         conn.commit()
         route = cur.fetchall()
         cur.close()
@@ -38,4 +37,4 @@ def checkroute(routenum):
     return route
 
 if __name__ == '__main__':
-    checkroute()
+    checkroute3()
