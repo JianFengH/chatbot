@@ -20,6 +20,9 @@ password=
 access_token=
 ``` 
 
+## Initialize Database
+You can find sql files under the directory of `db` to initialize the database.
+
 ## How to run
 
 ### Run python directly, in Terminal
