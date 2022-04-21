@@ -3,14 +3,13 @@ import psycopg2
 from random import randint
 from config import config
 
-#Define variable "route"
+#Define variable "Video"
 Video = None
 def watch():
     """ Connect to the PostgreSQL database server """
     
     #Define global variable "video"
     global Video
-    #get the last number from command "/cookingvideo"
 
     conn = None
     try:
@@ -21,7 +20,7 @@ def watch():
         conn = psycopg2.connect(**params)
 
         
-        
+        #Use random functions to get a random integer
         rannum = randint(1, 10)
         
         # create a cursor and execute the query

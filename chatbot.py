@@ -8,7 +8,7 @@ from config import config
 import configparser
 import os
 
-# Use the function from MaclehoseTrail
+
 from MaclehoseTrail import Photo, checkroute
 from LantauTrail import checkroute2
 from WilsonTrail import checkroute3
@@ -28,8 +28,6 @@ def main():
 
     logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                         level=logging.INFO)
-    #access_token = config('telegram')['access_token']
-    #logging.info('telegramParams access_token: %s', access_token)
 
     # ////Setting start Menu
     dispatcher.add_handler(CommandHandler("start", Startmenu))
@@ -69,6 +67,7 @@ def Trail1(update: Update, context: CallbackContext) -> None:
     update.message.reply_text('Here are the route and landscape photo:')
     context.bot.send_message(chat_id=update.effective_chat.id, text=result)
     context.bot.send_photo(chat_id=update.effective_chat.id,photo=Photo)
+    update.message.reply_text("Click the /start to return to the menu.")
 
     # ////LANTAU TRAIL
 def Trail2(update: Update, context: CallbackContext) -> None:
@@ -77,7 +76,7 @@ def Trail2(update: Update, context: CallbackContext) -> None:
     update.message.reply_text('Here are the route and landscape photo:')
     context.bot.send_message(chat_id=update.effective_chat.id, text=result)
     context.bot.send_photo(chat_id=update.effective_chat.id,photo=Photo)
-    
+    update.message.reply_text("Click the /start to return to the menu.")
 
     # /////WILSON TRAIL
 def Trail3(update: Update, context: CallbackContext) -> None:
@@ -86,8 +85,9 @@ def Trail3(update: Update, context: CallbackContext) -> None:
     update.message.reply_text('Here are the route and landscape photo:')
     context.bot.send_message(chat_id=update.effective_chat.id, text=result)
     context.bot.send_photo(chat_id=update.effective_chat.id,photo=Photo)
+    update.message.reply_text("Click the /start to return to the menu.")
 
-#startMenu
+    # ////startMenu
 def Startmenu(update: Update, context: CallbackContext) -> None:
     Text = ("Welcome to the windbot! This bot includes three famous hiking trails in Hong Kong and some cooking videos."
     " Now it can not only share hiking trails with you, but also cooking videos! \n"
@@ -99,7 +99,7 @@ def Startmenu(update: Update, context: CallbackContext) -> None:
             [InlineKeyboardButton('COOKING VIDEOS', callback_data='4')]]))
 
 
-#get the callback data from startmenu and respond
+    #get the callback data from startmenu and respond
 def Checkmenu(update: Update, context: CallbackContext) -> None:
     querydata = update.callback_query
     logging.info(str(querydata))
@@ -129,12 +129,12 @@ def Checkmenu(update: Update, context: CallbackContext) -> None:
     elif querydata.data == "4":
          update.callback_query.edit_message_text(text =text4 )
 
-
+#////Sharing the cooking video
 def Watch(update: Update, context: CallbackContext) -> None:
     update.message.reply_text('The cooking video is coming~')
     Cvideo = watch()
     context.bot.send_message(chat_id=update.effective_chat.id,text=Cvideo, disable_web_page_preview = "False")
-
+    update.message.reply_text("You can click  /cookingvideo  to watch more cooking videos, or click  /start  to return to the menu.")
 
 
 if __name__ == '__main__':

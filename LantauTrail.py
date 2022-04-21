@@ -2,7 +2,7 @@ from asyncio import run_coroutine_threadsafe
 import psycopg2
 from config import config
 
-#Define variable "route"
+#Define variable "route" and "Photo"
 route = None
 Photo = None
 def checkroute2(routenum):

@@ -3,7 +3,7 @@ import psycopg2
 
 from config import config
 
-#Define variable "route"
+#Define variable "route" and "Photo"
 route = None
 Photo = None
 def checkroute(routenum):
