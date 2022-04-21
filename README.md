@@ -22,7 +22,7 @@ access_token=
 
 ## How to run
 
-### Run python directly
+### Run python directly, in Terminal
 ```
 pip install -r requirements.txt
 
