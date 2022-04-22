@@ -1,12 +1,18 @@
 # Chatbot
 This project is about a chatbot on Telegram to study the cloud computing. You can refer to the project of [chatbot-deploy](https://github.com/JianFengH/chatbot-deploy.git) which is conveinent for the environment of development and deployment. You can refer to [an instruction for bots on Telegram](https://core.telegram.org/bots) to learn about how to create a bot and more.
 
+## An example of chatbot on Telegram
+![telegram-bot](./telegram-bot.jpeg)
+
 ## Members of group 22 
 | Name | Github ID |
 | - | - |
 | Hao Jianfeng | JianFengH |
 | Liu Wei | thydoge |
 | Cao Xiaoyun| midori-owo |
+
+## Initialize Database
+You can find sql files under the directory of `db` to initialize the database.
 
 ## Create a file `config.ini` under the root directory
 ```
@@ -19,9 +25,6 @@ password=
 [telegram]
 access_token=
 ``` 
-
-## Initialize Database
-You can find sql files under the directory of `db` to initialize the database.
 
 ## How to run
 
