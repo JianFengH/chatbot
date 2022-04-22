@@ -2,7 +2,7 @@
 This project is about a chatbot on Telegram to study the cloud computing. You can refer to the project of [chatbot-deploy](https://github.com/JianFengH/chatbot-deploy.git) which is conveinent for the environment of development and deployment. You can refer to [an instruction for bots on Telegram](https://core.telegram.org/bots) to learn about how to create a bot and more.
 
 ## An example of chatbot on Telegram
-![telegram-bot](./telegram-bot.jpeg)
+<img src='./telegram-bot.jpeg' alt='telegram-bot' width='200'>
 
 ## Members of group 22 
 | Name | Github ID |
