@@ -4,13 +4,6 @@ This project is about a chatbot on Telegram to study the cloud computing. You ca
 ## An example of chatbot on Telegram
 <img src='./telegram-bot.jpeg' alt='telegram-bot' width='200'>
 
-## Members of group 22 
-| Name | Github ID |
-| - | - |
-| Hao Jianfeng | JianFengH |
-| Liu Wei | thydoge |
-| Cao Xiaoyun| midori-owo |
-
 ## Initialize Database
 You can find sql files under the directory of `db` to initialize the database.
 
